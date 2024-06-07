@@ -1,0 +1,85 @@
+###
+get http://localhost:8000/
+
+# hello주소 요청
+# http://localhost:8000/hello
+###
+get http://localhost:8000/hello
+
+# query string
+# http://localhost:8000/qs?p1=aa
+###
+get http://localhost:8000/qs?p1=aa
+
+# post 요청
+# localhost:8000/hello
+###
+post http://localhost:8000/hello
+
+# post json형식 요청
+# localhost:8000/post-req
+###
+post http://localhost:8000/post-req
+Content-Type: application/json; charset=UTF-8
+# json형식 데이터
+
+{
+    "name":"post",
+    "age":"11"
+}
+
+#db로 전송 
+###
+post http://localhost:8000/save
+Content-Type: application/json; charset=UTF-8
+
+# {
+#     "name":"대한민국",
+#     "capital":"서울",
+#     "population":51200000
+# }
+# {
+#     "name":"프랑스",
+#     "capital":"파리",
+#     "population":61200000
+# }
+# {
+#     "name":"호수",
+#     "capital":"캔버러",
+#     "population":61200000
+# }
+{
+    "name":"미국",
+    "capital":"워싱턴",
+    "population":81200000
+}
+
+# db 목록 표시
+# localhost:8000/list
+###
+get http://localhost:8000/list
+
+# db 목록 상세 표시
+# localhost:8000/1
+###
+get http://localhost:8000/5
+
+# db 목록 수정
+# localhost:8000/1
+###
+put http://localhost:8000/1
+Content-Type: application/json; charset=UTF-8
+
+{
+    "id":1,
+    "name":"대한민국",
+    "capital":"서울",
+    "population":55500000
+}
+
+#delete
+###
+delete http://localhost:8000/4
+
+
+
